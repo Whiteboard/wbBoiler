@@ -3,7 +3,7 @@
 =========
 
 wbBoiler uses a bunch of proven practices to get up and running. We're borrowing some concepts used by Bootstrap, h5bp, and others. To get going quickly, clone the repo and run
-```
+```bash
 make install # run this the first time you use wbBoiler only
 make watch
 ```
