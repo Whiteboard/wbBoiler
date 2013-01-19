@@ -4,7 +4,7 @@
 
 wbBoiler uses a bunch of proven practices to get up and running. We're borrowing some concepts used by Bootstrap, h5bp, and others. To get going quickly, clone the repo and run
 ```
-make install
+make install # run this the first time you use wbBoiler only
 make watch
 ```
 from the project directory. Changes to *.less and script.js/plugin.js will trigger a build.
