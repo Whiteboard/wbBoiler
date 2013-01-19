@@ -30,8 +30,8 @@ watch:
 	watchr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make' }"
 install:
 	@echo "Installing components... this may take a while..."
-	@npm install jshint
-	@npm install uglifyjs
-	@npm install recess
-	@npm install prefixr
+	@npm install -g jshint
+	@npm install -g uglifyjs
+	@npm install -g recess
+	@npm install -g prefixr
 	@echo "${CHECK} Donezo at ${DATE}"
