@@ -23,13 +23,13 @@ We've included meta tags by default in the header for Facebook's Open Graph inte
 
 External tools we are using or borrowing from include:
 
-- Semantic.gs (less grid system)
-- Normalize.css
+- [Semantic.gs](http://semantic.gs) (less grid system)
+- [Normalize.css](http://necolas.github.com/normalize.css/)
 - CSS-Tricks' Chris Coyier's Less Mixins Snippet (http://css-tricks.com/snippets/css/useful-css3-less-mixins/)
-- Less CSS
-- jQuery
-- Modernizr
-- Parts and pieces of H5bp
+- [Less CSS](http://lesscss.org/)
+- [jQuery](http://jquery.com/)
+- [Modernizr](http://modernizr.com/)
+- Parts and pieces of [H5bp](https://github.com/h5bp/html5-boilerplate)
 
 ## Kitchensink.html
 
