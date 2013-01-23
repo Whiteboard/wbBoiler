@@ -23,7 +23,11 @@
 	-moz-box-sizing:    @type;
 	box-sizing:         @type;
 }
-
+.background-clip (@clip) {
+  -webkit-background-clip: @clip;
+     -moz-background-clip: @clip;
+          background-clip: @clip;
+}
 .border-radius (@radius: 5px) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius:    @radius;
