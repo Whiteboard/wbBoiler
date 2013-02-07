@@ -25,6 +25,10 @@ build:
 	@echo "Prefixing and minifying style.css > style.min.css"
 	@prefixr -i css/style.css -c > css/style.min.css
 	@echo "${CHECK} Donezo at ${DATE}"
+clean:
+	@echo "Deleting generated files: js/main.js main.min.js css/style.css css/style.min.css"
+	@rm js/main.js js/main.min.js css/style.css css/style.min.css
+	@echo "${CHECK} Donezo at ${DATE}"
 watch:
 	@echo "Watching less and js files..."; \
 	watchr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make' }"
