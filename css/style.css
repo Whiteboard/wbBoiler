@@ -1,3 +1,17 @@
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
 body {
   width: 100%;
   *zoom: 1;
@@ -452,7 +466,11 @@ hr {
   background: #ccc;
 }
 
-/* Borrowed from http://css-tricks.com/snippets/css/useful-css3-less-mixins/ */
+/* Borrowed from:
+	http://css-tricks.com/snippets/css/useful-css3-less-mixins/
+	https://github.com/owzzz/Useful-Less-Mixins/blob/master/mixins.less
+
+*/
 
 /*
 

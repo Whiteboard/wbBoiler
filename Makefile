@@ -31,7 +31,7 @@ watch:
 install:
 	@echo "Installing components... this may take a while..."
 	@npm install -g jshint
-	@npm install -g uglifyjs
+	@npm install -g uglify-js
 	@npm install -g recess
 	@npm install -g prefixr
 	@echo "${CHECK} Donezo at ${DATE}"
