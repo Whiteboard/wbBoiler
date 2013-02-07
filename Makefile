@@ -8,7 +8,7 @@ HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\
 
 build:
 	@echo "\n${HR}"
-	@echo "Building MLK"
+	@echo "Building wbBoiler"
 	@echo "\n${HR}"
 	@echo "Cat'ing JS"
 	@echo "/* do not modify this directly!" > js/main.js
