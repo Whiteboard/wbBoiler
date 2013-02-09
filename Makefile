@@ -7,6 +7,19 @@ CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
 build:
+	# `make build` and `make` do nothing; run:
+	# 		make production
+	# to do a one-off build, or:
+	# 		make watch
+	# to watch less and js files.
+	# Other options:
+	# 		make clean
+	#			# clears out generated files (if there were errors)
+	#		make install
+	#			# installs dependencies via npm
+	# if make install fails, you probably don't have npm installed.
+
+production:
 	@echo "\n${HR}"
 	@echo "Building wbBoiler"
 	@echo "\n${HR}"
@@ -18,9 +31,9 @@ build:
 	@jshint js/main.js
 	@echo "Min'ing JS"
 	@uglifyjs -nc js/main.js > js/main.min.js
-	@echo "Hinting min'd js"
 	@jshint js/main.min.js
 	@echo "Compiling Less"
+	@mkdir -p css
 	@recess --compile ./less/style.less > css/style.css
 	@echo "Prefixing and minifying style.css > style.min.css"
 	@prefixr -i css/style.css -c > css/style.min.css
@@ -31,7 +44,7 @@ clean:
 	@echo "${CHECK} Donezo at ${DATE}"
 watch:
 	@echo "Watching less and js files..."; \
-	watchr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make' }"
+	watchr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make production' }"
 install:
 	@echo "Installing components... this may take a while..."
 	@npm install -g jshint
