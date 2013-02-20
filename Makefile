@@ -7,17 +7,17 @@ CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
 build:
-	# `make build` and `make` do nothing; run:
-	# 		make production
-	# to do a one-off build, or:
-	# 		make watch
-	# to watch less and js files.
-	# Other options:
-	# 		make clean
-	#			# clears out generated files (if there were errors)
-	#		make install
-	#			# installs dependencies via npm
-	# if make install fails, you probably don't have npm installed.
+	@echo "make build and make do nothing; run:"
+	@echo "	make production"
+	@echo "to do a one-off build, or:"
+	@echo "	make watch"
+	@echo "to watch less and js files."
+	@echo "Other options:"
+	@echo " make clean"
+	@echo " # clears out generated files (if there were errors)"
+	@echo " make install"
+	@echo " # installs dependencies via npm"
+	@echo "if make install fails, you probably don't have npm installed."
 
 production:
 	@echo "\n${HR}"
@@ -42,9 +42,11 @@ clean:
 	@echo "Deleting generated files: js/main.js main.min.js css/style.css css/style.min.css"
 	@rm js/main.js js/main.min.js css/style.css css/style.min.css
 	@echo "${CHECK} Donezo at ${DATE}"
+
 watch:
 	@echo "Watching less and js files..."; \
 	watchr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make production' }"
+
 install:
 	@echo "Installing components... this may take a while..."
 	@npm install -g jshint
