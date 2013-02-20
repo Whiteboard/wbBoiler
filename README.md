@@ -23,9 +23,9 @@ We've included meta tags by default in the header for Facebook's Open Graph inte
 
 External tools we are using or borrowing from include:
 
-- [Semantic.gs](http://semantic.gs) (less grid system)
+- [Skeleton](http://www.getskeleton.com/) (css grid system and simple ui elements)
 - [Normalize.css](http://necolas.github.com/normalize.css/)
-- CSS-Tricks' Chris Coyier's Less Mixins Snippet (http://css-tricks.com/snippets/css/useful-css3-less-mixins/)
+- [CSS-Tricks' Chris Coyier's Less Mixins Snippets](http://css-tricks.com/snippets/css/useful-css3-less-mixins/)
 - [Less CSS](http://lesscss.org/)
 - [jQuery](http://jquery.com/)
 - [Modernizr](http://modernizr.com/)
