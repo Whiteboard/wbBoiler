@@ -7,7 +7,10 @@ CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 
 build:
-	@echo "make build and make do nothing; run:"
+	@echo ============================================================================================
+	@echo ============ wbBoiler is awesome. ==========================================================
+	@echo ============================================================================================
+	@echo "\"make build\" and \"make\" do nothing; run:"
 	@echo "	make production"
 	@echo "to do a one-off build, or:"
 	@echo "	make watch"
@@ -17,7 +20,15 @@ build:
 	@echo " # clears out generated files (if there were errors)"
 	@echo " make install"
 	@echo " # installs dependencies via npm"
-	@echo "if make install fails, you probably don't have npm installed."
+	@echo "if make install fails, you probably don't have npm/node installed. Check out:"
+	@echo "- https://npmjs.org/"
+	@echo "- and"
+	@echo "- http://nodejs.org/"
+	@echo ============================================================================================
+	@echo ============================================================================================
+
+help:
+	@make build
 
 production:
 	@echo "\n${HR}"
@@ -31,16 +42,16 @@ production:
 	@jshint js/main.js
 	@echo "Min'ing JS"
 	@uglifyjs -nc js/main.js > js/main.min.js
-	@jshint js/main.min.js
 	@echo "Compiling Less"
 	@mkdir -p css
 	@recess --compile ./less/style.less > css/style.css
 	@echo "Prefixing and minifying style.css > style.min.css"
 	@prefixr -i css/style.css -c > css/style.min.css
 	@echo "${CHECK} Donezo at ${DATE}"
+
 clean:
 	@echo "Deleting generated files: js/main.js main.min.js css/style.css css/style.min.css"
-	@rm js/main.js js/main.min.js css/style.css css/style.min.css
+	@rm -f js/main.js js/main.min.js css/style.css css/style.min.css
 	@echo "${CHECK} Donezo at ${DATE}"
 
 watch:
