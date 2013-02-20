@@ -1,6 +1,6 @@
 # USAGE:
 # USE `make watch` to watch js and less files
-# USE `make` to build
+# USE `make production` to build
 
 DATE=$(shell date +%I:%M%p)
 CHECK=\033[32m✔\033[39m
@@ -10,20 +10,20 @@ build:
 	@echo ============================================================================================
 	@echo ============ wbBoiler is awesome. ==========================================================
 	@echo ============================================================================================
-	@echo "\"make build\" and \"make\" do nothing; run:"
-	@echo "	make production"
-	@echo "to do a one-off build, or:"
-	@echo "	make watch"
-	@echo "to watch less and js files."
-	@echo "Other options:"
-	@echo " make clean"
-	@echo " # clears out generated files (if there were errors)"
-	@echo " make install"
-	@echo " # installs dependencies via npm"
-	@echo "if make install fails, you probably don't have npm/node installed. Check out:"
-	@echo "- https://npmjs.org/"
-	@echo "- and"
-	@echo "- http://nodejs.org/"
+	@echo "  \"make build\" and \"make\" do nothing; run:"
+	@echo "  	make production"
+	@echo "  to do a one-off build, or:"
+	@echo "  	make watch"
+	@echo "  to watch less and js files."
+	@echo "  Other options:"
+	@echo "    make clean"
+	@echo "    # clears out generated files (if there were errors)"
+	@echo "    make install"
+	@echo "    # installs dependencies via npm"
+	@echo "  if make install fails, you probably don't have npm/node installed. Check out:"
+	@echo "    - https://npmjs.org/"
+	@echo "    - and"
+	@echo "    - http://nodejs.org/"
 	@echo ============================================================================================
 	@echo ============================================================================================
 
