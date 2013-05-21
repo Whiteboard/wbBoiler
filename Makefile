@@ -37,7 +37,7 @@ production:
 	@echo "Cat'ing JS"
 	@echo "/* do not modify this directly!" > js/main.js
 	@echo "Modify plugins.js and script.js, then use the Makefile, please. */" >> js/main.js
-	@cat js/plugins.js js/script.js >> js/main.js
+	@cat js/vendor/jquery-2.0.0.min.js js/vendor/jquery-migrate-1.2.1.min.js js/plugins.js js/script.js >> js/main.js
 	@echo "Hinting JS"
 	@jshint js/main.js
 	@echo "Min'ing JS"
