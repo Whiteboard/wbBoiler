@@ -40,6 +40,12 @@
         <!-- Add your site or application content here -->
         <p>Whiteboard.is</p>
 
+
+
+        <!-- END application content -->
+
+
+        <!-- Faster than loading jQuery from a CDN (once it is MINIFIED and CONCAT'D; see the makefile) -->
         <script src="js/vendor/jquery-2.0.0.min.js"></script>
         <script src="js/vendor/jquery-migrate-1.2.1.min.js"></script>
         <!-- ember
@@ -48,16 +54,16 @@
         -->
         <script src="js/plugins.js"></script>
         <script src="js/script.js"></script>
-        <!--
-        the following will contain minified, concat'd versions of plugins+script
-        <script src="js/main.min.js"></script> -->
+        <!-- the following will contain minified, concat'd versions of jquery+migrate+plugins+script
+            <script src="js/main.min.js"></script>
+        -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            // var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            // s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
     </body>
 </html>
