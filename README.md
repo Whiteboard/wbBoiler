@@ -30,6 +30,7 @@ External tools we are using or borrowing from include:
 - [jQuery](http://jquery.com/)
 - [Modernizr](http://modernizr.com/)
 - Parts and pieces of [H5bp](https://github.com/h5bp/html5-boilerplate)
+- [Observr](https://github.com/kevinburke/observr)
 
 ## Kitchensink.html
 
