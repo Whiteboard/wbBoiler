@@ -3,12 +3,12 @@
 # USE `make` to build
 
 DATE=$(shell date +%I:%M%p)
-CHECK=\033[32m✔\033[39m
-HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+CHECK=\033[32m✔ Done\033[39m
+HR=\033[37m--------------------------------------------------\033[39m
 
 build:
 	@echo ============================================================================================
-	@echo ============ wbBoiler is awesome. ==========================================================
+	@echo ============ WBBoiler is awesome. ==========================================================
 	@echo ============================================================================================
 	@echo "  \"make build\" and \"make\" do nothing; run:"
 	@echo "  	make production"
@@ -33,30 +33,39 @@ help:
 production:
 	@echo "\n${HR}"
 	@echo "Building wbBoiler"
-	@echo "\n${HR}"
-	@echo "Cat'ing JS"
-	@echo "/* do not modify this directly!" > js/main.js
-	@echo "Modify plugins.js and script.js, then use the Makefile, please. */" >> js/main.js
-	@cat js/vendor/jquery-2.0.0.min.js js/vendor/jquery-migrate-1.2.1.min.js js/plugins.js js/script.js >> js/main.js
-	@echo "Hinting JS"
-	@jshint js/main.js
-	@echo "Min'ing JS"
-	@uglifyjs -nc js/main.js > js/main.min.js
-	@echo "Compiling Less"
+	@echo "${HR}"
+
+	@echo "Cat'ing JS..."
+	@echo "/* do not modify this directly!" > js/maintmp.js
+	@echo "Modify plugins.js and script.js, then use the Makefile, please. */" >> js/maintmp.js
+	@cat js/plugins.js js/script.js >> js/main.js
+	@echo " ${CHECK}"
+	@echo "Hinting JS..."
+	@jshint js/maintmp.js
+	@cat js/vendor/jquery-2.0.0.min.js js/vendor/jquery-migrate-1.2.1.min.js js/maintmp.js > js/main.js
+	@rm js/maintmp.js
+	@echo " ${CHECK}"
+	@echo "Min'ing JS..."
+	@uglifyjs js/main.js -c > js/main.min.js
+	@echo "             ${CHECK}"
+	@echo "Compiling Less..."
 	@mkdir -p css
 	@recess --compile ./less/style.less > css/style.css
 	@echo "Prefixing and minifying style.css > style.min.css"
 	@prefixr -i css/style.css -c > css/style.min.css
-	@echo "${CHECK} Donezo at ${DATE}"
+	@echo "             ${CHECK}"
+	@echo "${HR}"
+	@echo "${HR}"
+	@echo "${CHECK} -- ${DATE}"
 
 clean:
 	@echo "Deleting generated files: js/main.js main.min.js css/style.css css/style.min.css"
 	@rm -f js/main.js js/main.min.js css/style.css css/style.min.css
-	@echo "${CHECK} Donezo at ${DATE}"
+	@echo "${CHECK} BUILD COMPLETE at ${DATE}"
 
 watch:
 	@echo "Watching less and js files..."; \
-	watchr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make production' }"
+	observr -e "watch('less/.*\.less|js/script.js|js/plugins.js') { system 'make production' }"
 
 install:
 	@echo "Installing components... this may take a while..."
@@ -64,4 +73,7 @@ install:
 	@npm install -g uglify-js
 	@npm install -g recess
 	@npm install -g prefixr
-	@echo "${CHECK} Donezo at ${DATE}"
+	@gem install observr
+	@echo "${HR}"
+	@echo "${HR}"
+	@echo "${CHECK} -- ${DATE}"
