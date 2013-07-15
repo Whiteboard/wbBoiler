@@ -54,6 +54,7 @@ production:
 	@echo "Prefixing and minifying style.css > style.min.css"
 	@prefixr -i css/style.css -c > css/style.min.css
 	@echo "             ${CHECK}"
+	@osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'
 	@echo "${HR}"
 	@echo "${HR}"
 	@echo "${CHECK} -- ${DATE}"
